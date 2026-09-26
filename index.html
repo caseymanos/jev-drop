@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      A Thousand Small Frictions — An interactive field guide to Jev
+    </title>
+    <meta
+      name="description"
+      content="Explore the small things that become worth building when software can understand a little context. A field guide to Jev, its possibilities, and its tradeoffs."
+    />
+    <meta name="theme-color" content="#f4f1e9" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="inbox-examples.js" defer></script>
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="A Thousand Small Frictions home"
+        ><span class="mark">✳</span> small things<span class="wordmark-dot"
+          >.</span
+        ></a
+      ><span class="header-edition">A FIELD GUIDE TO CONTEXTUAL AI</span
+      ><button class="text-button sources-open">
+        Field notes <span>↗</span>
+      </button>
+    </header>
+    <nav class="chapter-nav" aria-label="Chapters">
+      <div class="chapter-inner">
+        <a href="#premise"><span>01</span> The idea</a
+        ><a href="#semantic-inbox"
+          ><span>02</span> Try Jev <i aria-hidden="true"></i></a
+        ><a href="#atlas"><span>03</span> Possibilities</a
+        ><a href="#tradeoffs"><span>04</span> Tradeoffs</a
+        ><a href="#scale"><span>05</span> The scale</a>
+      </div>
+      <div class="reading-track" aria-hidden="true">
+        <span id="reading-progress"></span>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-kicker">
+          <span><i class="status-dot"></i> A FIELD GUIDE TO JEV</span
+          ><span>VOL. 001 / SEPTEMBER 2026</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-title">A thousand<br />small <em>frictions.</em></h1>
+            <p class="hero-deck">
+              The emoji you can’t find. The search that doesn’t get it. The
+              inbox that never sorts itself.
+            </p>
+            <p class="hero-question">
+              What becomes worth building when software can understand a little
+              context, everywhere?
+            </p>
+            <div class="hero-actions">
+              <a href="#semantic-inbox" class="primary-link"
+                >Try the live experiment <span>↗</span></a
+              ><a href="#atlas" class="hero-secondary"
+                >Explore 32 possibilities <span>→</span></a
+              >
+            </div>
+            <p class="hero-live-note">
+              <i class="status-dot" aria-hidden="true"></i> Real Jev. 18
+              fictional emails. Your questions.
+            </p>
+          </div>
+          <div class="hero-scene">
+            <div class="orbit-label">LESS SEARCHING. MORE SAYING.</div>
+            <div class="scene-orbit orbit-one"></div>
+            <div class="scene-orbit orbit-two"></div>
+            <span class="floating-star star-one">✳</span
+            ><span class="floating-star star-two">+</span>
+            <div class="message-demo">
+              <div class="demo-top">
+                <span class="mini-dot"></span> ONE SMALL MOMENT
+                <span>01 / 03</span>
+              </div>
+              <div class="message-bubble" id="message-text">
+                That meeting could’ve<br />been an email.
+              </div>
+              <div class="suggestion-label">
+                A little context goes a long way.
+              </div>
+              <div
+                class="emoji-options"
+                aria-label="Illustrative emoji choices"
+              >
+                <span>🫠</span><span>📧</span><span>😮‍💨</span>
+              </div>
+              <div class="demo-bottom">
+                <span>ILLUSTRATIVE · NOT A LIVE MODEL</span
+                ><button
+                  id="next-example"
+                  aria-label="Show next illustrative example"
+                >
+                  Try another <span>→</span>
+                </button>
+              </div>
+            </div>
+            <div class="scene-caption">
+              <span class="caption-line"></span>A tiny decision.<br />A
+              surprisingly useful feature.
+            </div>
+          </div>
+        </div>
+        <div class="hero-footer">
+          <span>A new kind of model. A very familiar kind of problem.</span
+          ><a href="#premise">START SMALL <span>↓</span></a>
+        </div>
+      </section>
+      <section id="premise" class="premise wrap">
+        <div class="section-number">01 / THE SHIFT</div>
+        <div class="premise-main">
+          <h2>
+            Sometimes, software doesn’t<br />need to write. It needs to
+            <em>choose.</em>
+          </h2>
+          <p>
+            Jev takes context and answers bounded questions: which option fits,
+            how relevant something is, or whether a condition holds. Your code
+            decides what happens next.
+          </p>
+          <div class="decision-strip">
+            <div>
+              <span class="mono">CONTEXT IN</span
+              ><strong>“Find the receipt <br />from last week.”</strong>
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="decision-node">
+              <span class="mono">A SMALL DECISION</span
+              ><strong>Which of these fits?</strong
+              ><span class="decision-dots">● ● <b>●</b> ● ●</span>
+            </div>
+            <span class="flow-arrow">→</span>
+            <div>
+              <span class="mono">USEFUL ACTION OUT</span
+              ><strong>The right thing. <br />Already at the top.</strong>
+            </div>
+          </div>
+          <div class="primitive-facts">
+            <div>
+              <strong>$0.042</strong><span>per million input tokens</span>
+            </div>
+            <div>
+              <strong>70–500 ms</strong
+              ><span>vendor-reported response range</span>
+            </div>
+            <div>
+              <strong>Choices, not prose</strong
+              ><span>bounded outputs, still fallible</span>
+            </div>
+          </div>
+          <p class="fine-print">
+            Launch pricing and latency from
+            <a
+              href="https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+              target="_blank"
+              rel="noopener"
+              >TypeSafe ↗</a
+            >; latency is not a guarantee. Structured answers can still be
+            wrong. The useful change is a cheaper, faster way to make some
+            contextual decisions—not perfect judgment.
+          </p>
+        </div>
+      </section>
+      <section id="semantic-inbox" class="semantic-section">
+        <div class="wrap">
+          <div class="section-number">02 / THE LIVE EXPERIMENT</div>
+          <div class="section-heading">
+            <h2>Ask your<br /><em>inbox.</em></h2>
+            <div>
+              <p>18 emails. Your question.<br />See what Jev puts first.</p>
+              <a
+                class="source-link"
+                href="https://x.com/kieranklaassen/status/2103522599414501550"
+                target="_blank"
+                rel="noopener"
+                >Inspired by Kieran Klaassen’s Cora experiment ↗</a
+              >
+            </div>
+          </div>
+          <div class="inbox-playground">
+            <form id="ask-inbox-form">
+              <label for="inbox-question">What are you looking for?</label>
+              <div class="question-input">
+                <input
+                  id="inbox-question"
+                  maxlength="240"
+                  minlength="3"
+                  required
+                  placeholder="Which customers might leave?"
+                  autocomplete="off"
+                /><button
+                  class="primary-link"
+                  type="submit"
+                  id="ask-inbox-button"
+                >
+                  Ask Jev ↗
+                </button>
+              </div>
+            </form>
+            <div class="question-presets" aria-label="Example questions">
+              <button type="button">Which customers might leave?</button
+              ><button type="button">What needs action today?</button
+              ><button type="button">Find something suspicious</button
+              ><button type="button">Who wants to catch up socially?</button
+              ><button type="button">Which messages need no reply?</button>
+            </div>
+            <p class="question-note">
+              Your question + these fictional emails are sent to TypeSafe. Don’t
+              include personal information.
+            </p>
+            <p id="question-status" role="status" aria-live="polite">
+              Ask anything about this inbox. Jev scores relevance; it does not
+              write a reply.
+            </p>
+            <div class="question-workbench">
+              <div>
+                <div class="question-list-title">
+                  <span>18 FICTIONAL EMAILS</span
+                  ><button
+                    id="reset-question"
+                    type="button"
+                    class="text-button"
+                  >
+                    Original order ↺
+                  </button>
+                </div>
+                <div id="question-results"></div>
+              </div>
+              <div id="question-message" aria-live="polite"></div>
+            </div>
+          </div>
+          <details class="stored-experiment">
+            <summary>
+              How can you reuse scores without another model call?
+            </summary>
+            <div class="stored-experiment-body">
+              <ol
+                class="experiment-steps"
+                aria-label="How to use the experiment"
+              >
+                <li><span>1</span><strong>Score the inbox</strong></li>
+                <li><span>2</span><strong>Change your priorities</strong></li>
+                <li><span>3</span><strong>Inspect a message</strong></li>
+              </ol>
+              <div class="live-inbox-bar">
+                <div>
+                  <span class="mono" id="inbox-data-label"
+                    >ILLUSTRATIVE VALUES</span
+                  >
+                  <p>
+                    Six messages. Score once, then sort as often as you like.
+                  </p>
+                  <p id="live-inbox-status" role="status" aria-live="polite">
+                    Fictional inbox only. No personal data.
+                  </p>
+                </div>
+                <div class="live-inbox-actions">
+                  <button id="score-with-jev" class="primary-link">
+                    Score this inbox with Jev <span>↗</span></button
+                  ><button id="use-illustrative" class="text-button" hidden>
+                    Use illustrative values instead ↺
+                  </button>
+                </div>
+              </div>
+              <div class="inbox-lab">
+                <div class="inbox-controls">
+                  <span class="mono">WHAT MATTERS RIGHT NOW?</span>
+                  <div
+                    class="inbox-presets"
+                    role="group"
+                    aria-label="Inbox priority presets"
+                  >
+                    <button data-inbox-preset="billing" aria-pressed="true">
+                      Billing issues</button
+                    ><button data-inbox-preset="urgent" aria-pressed="false">
+                      Needs me now</button
+                    ><button data-inbox-preset="customer" aria-pressed="false">
+                      Customers first
+                    </button>
+                  </div>
+                  <div class="inbox-top-match">
+                    <span class="mono">NOW FIRST</span
+                    ><a id="inbox-top-match" href="#inbox-list"
+                      >Charged twice this month ↓</a
+                    >
+                  </div>
+                  <div id="feature-controls"></div>
+                  <div class="ranking-mode">
+                    <label for="ranking-mode">How to rank</label
+                    ><select id="ranking-mode">
+                      <option value="weighted">Weighted priorities</option>
+                      <option value="cosine">Cosine similarity</option>
+                    </select>
+                    <p id="mode-description">
+                      Each feature contributes its value × your priority. The
+                      score is normalized by total priority.
+                    </p>
+                  </div>
+                  <button id="zero-priorities" class="text-button">
+                    Clear priorities ↺
+                  </button>
+                </div>
+                <div class="inbox-results">
+                  <div class="inbox-toolbar">
+                    <span
+                      ><i class="status-dot"></i> A SMALL, SYNTHETIC INBOX</span
+                    ><span>6 MESSAGES</span>
+                  </div>
+                  <div
+                    class="inbox-list"
+                    id="inbox-list"
+                    aria-label="Messages ranked by selected priorities"
+                  ></div>
+                  <p class="inbox-hint">
+                    Select a message to see why it ranks there.
+                  </p>
+                  <div
+                    class="feature-explanation"
+                    id="feature-explanation"
+                  ></div>
+                </div>
+              </div>
+              <div class="reuse-strip">
+                <div>
+                  <span class="mono">UNDERSTOOD ONCE</span
+                  ><strong
+                    >6 documents <small>→ 24 named features</small></strong
+                  >
+                </div>
+                <span class="reuse-arrow" aria-hidden="true">→</span>
+                <div>
+                  <span class="mono">REUSED AS YOU EXPLORE</span
+                  ><strong
+                    ><span id="local-search-count">1</span> local rankings
+                    <small>· 0 extra model calls</small></strong
+                  >
+                </div>
+                <button id="reset-inbox" class="text-button">
+                  Reset experiment ↺
+                </button>
+              </div>
+              <div class="semantic-notes">
+                <article>
+                  <span class="mono">THE UPSIDE</span>
+                  <h3>Score once. Sort again.</h3>
+                  <p>
+                    <b>≈ $4.20</b> estimated inference for 100,000 documents.<br />No
+                    new model calls to reorder them.
+                  </p>
+                </article>
+                <article>
+                  <span class="mono">THE CATCH</span>
+                  <h3>You get what you ask for.</h3>
+                  <p id="inbox-blindspot">
+                    “Billing” finds invoices and duplicate charges.<br />To tell
+                    them apart, ask another question.
+                  </p>
+                </article>
+              </div>
+              <p class="semantic-disclosure">
+                Fictional messages · Illustrative scores until you run Jev · Not
+                a benchmark.
+              </p>
+              <details class="inbox-method">
+                <summary>
+                  Assumptions &amp; how this works
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <div>
+                  <p>
+                    <b>Cost estimate.</b> 100,000 documents × 1,000 input tokens
+                    (including questions) × $0.042 per million tokens = $4.20.
+                    One pass; excludes retries, refreshes, query interpretation,
+                    storage and computation.
+                  </p>
+                  <p>
+                    <b>Limits.</b> Stored judgments can be wrong or stale. New
+                    features require rescoring the archive. These four features
+                    complement richer retrieval; they do not replace all the
+                    information in a document.
+                  </p>
+                  <p>
+                    <b>Method.</b> Kieran proposes cosine similarity and is
+                    trying it in Cora; his post reports no benchmark. Weighted
+                    priorities are our explanatory alternative. Ranking scores
+                    are not confidence or accuracy.
+                  </p>
+                  <p>
+                    <b>Live demo.</b> Jev reads six fixed fictional messages.
+                    Results may be cached for one hour. Changing priorities
+                    reuses their scores locally.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </details>
+          <div
+            id="inbox-announcement"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <section id="atlas" class="atlas-section">
+        <div class="wrap">
+          <div class="section-number">03 / THE POSSIBILITY ATLAS</div>
+          <div class="section-heading">
+            <h2>Little things.<br /><em>Everywhere.</em></h2>
+            <div>
+              <p>
+                Start with something you wish worked better.<br />Follow it to a
+                real build—or a possibility worth testing.
+              </p>
+              <span class="atlas-count"
+                ><b id="total-count">32</b> selected possibilities · 8 everyday
+                needs</span
+              >
+            </div>
+          </div>
+          <div class="atlas-controls">
+            <div class="search-box">
+              <span aria-hidden="true">⌕</span
+              ><input
+                id="atlas-search"
+                type="search"
+                placeholder="Find a friction. Try “search” or “inbox”…"
+                aria-label="Search possibilities"
+              /><kbd>/</kbd>
+            </div>
+            <div class="view-filter">
+              <label for="evidence-filter">Show</label
+              ><select id="evidence-filter">
+                <option value="all">All possibilities</option>
+                <option value="Measured">Reported results</option>
+                <option value="Built">Public builds</option>
+                <option value="Idea">Ideas to explore</option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="category-list"
+            role="group"
+            aria-label="Filter by everyday need"
+          ></div>
+          <div class="atlas-meta">
+            <span id="result-count" role="status"></span
+            ><span
+              ><i class="legend-dot built"></i> Build
+              <i class="legend-dot measured"></i> Reported result
+              <i class="legend-dot idea"></i> Idea</span
+            >
+          </div>
+          <div id="atlas-grid" class="atlas-grid"></div>
+          <div class="atlas-expand">
+            <button id="expand-atlas" class="text-button">
+              Explore all 32 possibilities <span>↓</span>
+            </button>
+          </div>
+          <div id="empty-state" hidden>
+            <h3>No matches. Plenty of possibilities.</h3>
+            <p>Try a broader word or a different filter.</p>
+            <button id="clear-filters" class="primary-link">
+              Reset filters ↗
+            </button>
+          </div>
+          <a class="inbox-jump" href="#semantic-inbox"
+            >Return to the live inbox experiment <span>↑</span></a
+          >
+          <div class="atlas-footnote">
+            <span>CURATED, NOT EXHAUSTIVE</span>
+            <p>
+              32 illustrated examples from 474 community listings. Visuals are
+              authored, not product screenshots. Open a card for sources and
+              limits.
+            </p>
+            <button class="text-button sources-open">
+              About the research ↗
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="tradeoffs" class="tradeoffs wrap">
+        <div class="section-number">04 / SHOW YOUR WORK</div>
+        <div class="section-heading">
+          <h2>The gains are real.<br /><em>So are the tradeoffs.</em></h2>
+          <p>
+            A faster decision is only useful if it’s good enough.<br />Explore
+            three published comparisons.
+          </p>
+        </div>
+        <div
+          class="comparison-tabs"
+          role="tablist"
+          aria-label="Choose comparison"
+        >
+          <button
+            role="tab"
+            aria-selected="true"
+            id="tab-search"
+            aria-controls="comparison-panel"
+            data-study="search"
+          >
+            01 <span>Better search</span></button
+          ><button
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            id="tab-rerank"
+            aria-controls="comparison-panel"
+            data-study="rerank"
+          >
+            02 <span>Replacing a reranker?</span></button
+          ><button
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            id="tab-fallback"
+            aria-controls="comparison-panel"
+            data-study="fallback"
+          >
+            03 <span>The fallback bill</span>
+          </button>
+        </div>
+        <div
+          id="comparison-panel"
+          role="tabpanel"
+          aria-labelledby="tab-search"
+          class="comparison-panel"
+        ></div>
+        <div class="replace-header">
+          <span class="mono">WHAT MIGHT GET REPLACED?</span>
+          <p>Think in components, not extinction events.</p>
+        </div>
+        <div class="replacement-grid">
+          <article>
+            <span class="replace-status green">STRONGEST CANDIDATE</span>
+            <h3>A big model doing<br />a very small job.</h3>
+            <p>
+              Classification, routing and narrow scoring calls that never needed
+              generated prose.
+            </p>
+          </article>
+          <article>
+            <span class="replace-status orange">IT DEPENDS</span>
+            <h3>A specialized<br />classifier or reranker.</h3>
+            <p>
+              Compare quality, local execution and full costs. A dedicated model
+              may already be better.
+            </p>
+          </article>
+          <article>
+            <span class="replace-status neutral">STILL NEEDED</span>
+            <h3>The rest of<br />the system.</h3>
+            <p>
+              Retrieval, generation, permissions, exact checks and the judgment
+              to know when to stop.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="scale" class="scale-section">
+        <div class="wrap">
+          <div class="section-number">05 / NOW, ZOOM OUT</div>
+          <div class="scale-heading">
+            <h2>Small, multiplied<br />by <em>everyone.</em></h2>
+            <p>
+              A few seconds can feel trivial.<br />A million small decisions can
+              change what’s worth building.
+            </p>
+          </div>
+          <div class="scale-picture">
+            <div>
+              <span class="mono">MAKE THE MULTIPLIER VISIBLE</span>
+              <h3>One little help.<br />Over and over.</h3>
+              <p id="scale-picture-copy"></p>
+            </div>
+            <div>
+              <div
+                id="decision-mosaic"
+                class="decision-mosaic"
+                aria-hidden="true"
+              ></div>
+              <p class="mosaic-caption">
+                <span><i></i> Assumed useful</span
+                ><span id="mosaic-unit"></span>
+              </p>
+            </div>
+          </div>
+          <div class="scale-workbench">
+            <div class="scale-inputs">
+              <div class="scenario-label mono">AN ASSUMPTION PLAYGROUND</div>
+              <div
+                class="preset-group"
+                role="group"
+                aria-label="Scale scenario"
+              >
+                <button aria-pressed="false" data-preset="personal">
+                  Just me</button
+                ><button
+                  class="active"
+                  aria-pressed="true"
+                  data-preset="product"
+                >
+                  A product</button
+                ><button aria-pressed="false" data-preset="platform">
+                  A platform
+                </button>
+              </div>
+              <label class="range-label" for="people"
+                >People using it
+                <output id="people-value">100,000</output></label
+              ><input
+                id="people"
+                type="range"
+                min="0"
+                max="6"
+                step="0.1"
+                value="5"
+              /><label class="range-label" for="decisions"
+                >Decisions per person, per day
+                <output id="decisions-value">20</output></label
+              ><input
+                id="decisions"
+                type="range"
+                min="1"
+                max="100"
+                value="20"
+              /><label class="range-label" for="fallback"
+                >Sent to a larger model
+                <output id="fallback-value">0%</output></label
+              ><input id="fallback" type="range" min="0" max="50" value="0" />
+              <details class="assumptions">
+                <summary>Adjust the assumptions <span>+</span></summary>
+                <div class="assumption-inputs">
+                  <label
+                    >Previous model cost / decision ($)<input
+                      id="baseline-cost"
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="0.001"
+                      value="0.001" /></label
+                  ><label
+                    >Input tokens / decision<input
+                      id="tokens"
+                      type="number"
+                      min="1"
+                      max="100000"
+                      value="1000" /></label
+                  ><label
+                    >Useful suggestions (%)<input
+                      id="useful"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="25" /></label
+                  ><label
+                    >Seconds saved / useful suggestion<input
+                      id="seconds"
+                      type="number"
+                      min="0"
+                      max="3600"
+                      value="2" /></label
+                  ><label
+                    >Larger-model cost / call ($)<input
+                      id="fallback-cost"
+                      type="number"
+                      min="0"
+                      max="100"
+                      step="0.001"
+                      value="0.001"
+                  /></label>
+                </div>
+              </details>
+            </div>
+            <div class="scale-results">
+              <div class="scale-dots" aria-hidden="true"></div>
+              <div class="scale-result-main">
+                <span class="mono">DECISIONS, EVERY DAY</span
+                ><strong id="daily-decisions">2,000,000</strong
+                ><span id="per-person">20 tiny moments per person.</span>
+              </div>
+              <div class="scale-stats">
+                <div>
+                  <span>Jev inference / day</span
+                  ><strong id="daily-cost">$84</strong>
+                </div>
+                <div>
+                  <span>With fallback / day</span
+                  ><strong id="total-cost">$84</strong>
+                </div>
+                <div>
+                  <span>Time recovered / person / day</span
+                  ><strong id="time-person">10 sec</strong>
+                </div>
+                <div>
+                  <span>Across everyone / day</span
+                  ><strong id="time-total">278 hours</strong>
+                </div>
+                <div>
+                  <span>Previous inference / day</span
+                  ><strong id="baseline-total">$2,000</strong>
+                </div>
+                <div>
+                  <span>Inference savings / day</span
+                  ><strong id="inference-savings">$1,916</strong>
+                </div>
+              </div>
+              <div class="scale-takeaway" id="scale-takeaway"></div>
+            </div>
+          </div>
+          <div class="scale-disclaimer">
+            <span>SCENARIO, NOT A FORECAST</span>
+            <p>
+              Uses TypeSafe’s published $0.042 / million input tokens, with free
+              output. Excludes hosting, errors, review and maintenance. Time
+              recovered is fragmented convenience—not jobs or wages eliminated.
+              Adoption and usefulness are assumptions. Savings apply only to
+              existing calls being replaced; set previous model cost to $0 for a
+              new feature.
+            </p>
+            <a
+              href="https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+              target="_blank"
+              rel="noopener"
+              >Pricing source ↗</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="closing wrap">
+        <span class="section-number">A THOUGHT TO LEAVE WITH</span>
+        <h2>
+          The next useful AI feature<br />might not look like <em>AI.</em>
+        </h2>
+        <p>
+          It might just be the thing you wanted,<br />in the place you expected
+          it.
+        </p>
+        <a href="#atlas" class="primary-link"
+          >Find your small thing <span>↑</span></a
+        ><span class="closing-mark" aria-hidden="true">✳</span>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <a class="wordmark" href="#"><span class="mark">✳</span> small things.</a
+      ><span>An independent field guide. Not affiliated with TypeSafe.</span
+      ><button class="text-button sources-open">Sources & methodology ↗</button>
+    </footer>
+    <dialog id="detail-dialog" aria-labelledby="detail-title">
+      <div id="detail-content"></div>
+      <button class="dialog-close" aria-label="Close detail">×</button>
+    </dialog>
+    <dialog id="sources-dialog" aria-labelledby="sources-title">
+      <div class="source-content">
+        <span class="mono">THE FIELD NOTES</span>
+        <h2 id="sources-title">Curiosity, with receipts.</h2>
+        <p>
+          This is an independent editorial exploration of Jev and small
+          contextual decisions. Research snapshot: September 25–26, 2026. The
+          inbox playground sends your question and 18 fictional emails to Jev
+          through a server-side endpoint. The separate score-reuse demo uses six
+          fictional messages. Results may be cached for one hour.
+        </p>
+        <div class="source-key">
+          <p>
+            <b>Reported result</b> — A published test with numbers. We have not
+            independently reproduced these community tests.
+          </p>
+          <p>
+            <b>Public build</b> — A linked implementation or demo. Existence
+            does not prove reliability, adoption or benefit.
+          </p>
+          <p>
+            <b>Idea</b> — An editorial extension worth testing, not a claim that
+            someone shipped it.
+          </p>
+        </div>
+        <h3>Reading list</h3>
+        <div id="source-links"></div>
+        <h3>How we chose the examples</h3>
+        <p>
+          We inventoried 474 distinct catalog URLs across 15 categories in
+          awesome-jev and inspected selected original writeups. Catalogs include
+          experiments, integrations and Jev-inspired alternatives. We do not
+          treat listing counts as adoption. The atlas is a curated selection,
+          not an exhaustive review.
+        </p>
+        <p>
+          Charts preserve the authors’ sample sizes and limitations. Scenarios
+          are arithmetic on editable assumptions. Emoji examples are authored
+          illustrations. The question playground starts unscored and returns
+          real Jev relevance judgments. The separate feature demo starts with
+          illustrative values and can load real scores. Neither is a benchmark.
+        </p>
+        <h3>A note on the keyboard</h3>
+        <p>
+          Google introduced on-device AI emoji suggestions in 2018. Jev’s
+          opportunity is making contextual features accessible to more builders.
+          This site does not claim that emoji prediction is new.
+        </p>
+        <a
+          class="source-link"
+          href="https://blog.google/products-and-platforms/products/search/may-we-gif-you-suggestion-emojis-and-more-gboard/"
+          target="_blank"
+          rel="noopener"
+          >Google’s 2018 announcement ↗</a
+        >
+      </div>
+      <button class="dialog-close" aria-label="Close sources">×</button>
+    </dialog>
+    <noscript
+      ><div class="noscript">
+        Enable JavaScript to explore the atlas, comparisons and calculator. The
+        introductory story is available above.
+      </div></noscript
+    >
+  </body>
+</html>

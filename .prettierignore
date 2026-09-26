@@ -1,0 +1,6 @@
+.env*
+.vercel/
+public/
+node_modules/
+qa/
+package-lock.json

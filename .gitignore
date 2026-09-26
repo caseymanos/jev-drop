@@ -1,0 +1,8 @@
+.env*
+!.env.example
+.vercel/
+public/
+node_modules/
+qa/
+.DS_Store
+*.log

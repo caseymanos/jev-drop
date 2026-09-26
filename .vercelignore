@@ -1,0 +1,7 @@
+.env*
+.git/
+qa/
+README.md
+node_modules/
+public/
+server.cjs
